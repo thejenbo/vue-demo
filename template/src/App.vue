@@ -1,60 +1,81 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>\{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+  <div id="app"> 
+    <div>
+      <Pineapple v-bind:class="`mouth-${count}`"/>
+      <h1>{{ title }}</h1>
+      <div>
+        <input type="range"  min="0" max="5" v-model="count"/>
+        <h2>{{ count }} serving(s)</h2>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import Pineapple from './assets/img/pineapple.svg';
+
 export default {
   name: 'app',
+  components: {
+    Pineapple,
+  },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      title: 'Did you eat your fruits and veggies today?',
+      count: 0
     }
   }
 }
 </script>
 
-<style{{#sass}} lang="scss"{{/sass}}>
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Domine:700|Montserrat');
+@import './assets/styles/pineapple.scss';
+
+body {
+  background-color: #F9CED0;
+  color: #3a3a3a;
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 0 30px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+input[type="range"] { 
+  -webkit-appearance: none !important;
+  width: 100%;
+  height: 15px;
+  background-color: #83c190;
+  border: 1px solid darken(#83c190, 4%);
+  border-radius: 10px;
+  margin: auto;
+  transition: all 0.3s ease;
+  width: 500px;
+  outline: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important  ;
+  width: 30px;
+  height: 30px;
+  background-color: #f1e6b8;
+  border-radius: 30px;
+  box-shadow: 0px 0px 3px darken(#f1e6b8, 15%);
+  transition: all 0.5s ease;
+}
+
+.content {
+  margin-top: 260px;
 }
 
 h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+  font-family: 'Domine', Georgia, serif;
 }
 </style>

@@ -1,0 +1,88 @@
+.st0{fill:#E9C0C3;}
+.st1{fill:#EFDF9C;stroke:#EFDF9C;stroke-width:3;stroke-miterlimit:10;}
+.st2{fill:#F2E6B2;}
+.st3{clip-path:url(#SVGID_2_);}
+.st4{fill:#EFDF9C;}
+.st5{fill:#67B77F;}
+.st6{fill:#59A071;}
+.st7{fill:#71C48C;}
+.st8{fill:#399661;}
+.st9{fill:#55AF7A;}
+.st10{fill:#5DA86E;}
+.st11{fill:#75C595;}
+.st12{fill:#5FAD7B;}
+.st13{fill:#5CB277;}
+.st14{fill:#70C386;}
+.st15{fill:#FFFFFF;}
+
+#pineapple {
+    height: 620px;
+    width: 700px;
+
+    #pineapple-mouth-0,
+    #pineapple-mouth-1,
+    #pineapple-mouth-2,
+    #pineapple-mouth-3,
+    #pineapple-mouth-4,
+    #pineapple-mouth-5 {
+        display: none;
+    }
+
+    &.mouth-0 {
+        #pineapple-mouth-0 {
+            display: block;
+        }
+    }
+
+    &.mouth-1 {
+        #pineapple-mouth-1 {
+            display: block;
+        }
+    }
+    &.mouth-2 {
+        #pineapple-mouth-2 {
+            display: block;
+        }
+    }
+
+    &.mouth-3 {
+        #pineapple-mouth-3 {
+            display: block;
+        }
+    }
+    &.mouth-4 {
+        #pineapple-mouth-4 {
+            display: block;
+        }
+    }
+
+    &.mouth-5 {
+        #pineapple-mouth-5 {
+            display: block;
+        }
+    }
+}
+
+@keyframes blink {
+    90%, 92% {
+        transform: scaleY(1);
+    }
+
+    91% {
+        transform: scaleY(0);
+    }
+}
+
+#pineapple-left-eye {
+    transform-origin: 322px 444px;
+}
+
+#pineapple-right-eye {
+    transform-origin: 420px 444px;
+}
+
+#pineapple-left-eye,
+#pineapple-right-eye {
+	animation: blink 7s infinite;
+	animation-delay: 2s;
+}
