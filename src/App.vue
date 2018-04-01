@@ -17,6 +17,7 @@
 
 <script>
 import Pineapple from './assets/img/pineapple.svg';
+import 'normalize.css';
 
 export default {
   name: 'app',
@@ -32,12 +33,12 @@ export default {
   methods: {
     increaseCount: function() {
       if (this.count < 5) {
-        this.count += 1;
+        this.count++;
       }
     },
     decreaseCount: function () {
       if (this.count > 0) {
-        this.count -= 1;
+        this.count--;
       }
     }
   }
@@ -61,15 +62,15 @@ body {
   padding: 0 30px;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .container {
-  max-width: 700px;
+  max-width: 900px;
+  width: 100%;
 };
 
 input[type="range"] { 
-  -webkit-appearance: none !important;
+  -webkit-appearance: none;
   width: 100%;
   height: 15px;
   background-color: #83c190;
@@ -82,12 +83,12 @@ input[type="range"] {
 }
 
 input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none !important;
+  -webkit-appearance: none;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
   background-color: #f1e6b8;
-  border-radius: 30px;
+  border-radius: 45px;
   box-shadow: 0px 0px 3px darken(#f1e6b8, 15%);
   transition: all 0.5s ease;
 }
@@ -97,23 +98,24 @@ input[type="range"]::-webkit-slider-thumb {
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 20px 0;
+  margin: 60px 0;
 }
 
 button {
+  -webkit-appearance: none;
   transition: all 0.5s ease;
   background-color: #83c190;
-  border-radius: 50%;
+  border-radius: 60px;
   border: none;
   outline: 0;
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
   color: #f1e6b8;
   cursor: pointer;
-  width: 45px;
-  height: 45px;
+  min-width: 60px;
+  height: 60px;
   font-size: 30px;
   position: relative;
-  margin: 0 20px;
+  margin: 0 40px;
 
   &:hover {
     background-color: darken(#83c190, 8%);

@@ -97,7 +97,9 @@ module.exports = {
   },
   devtool: '#eval-source-map',
   devServer: {
-      contentBase: path.join(__dirname, 'public')
+    contentBase: path.join(__dirname, 'public'),
+    historyApiFallback: true,
+    publicPath: '/dist/'
   }
 }
 
