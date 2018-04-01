@@ -1,11 +1,15 @@
 <template>
   <div id="app"> 
-    <div>
+    <div class="container">
       <Pineapple v-bind:class="`mouth-${count}`"/>
       <h1>{{ title }}</h1>
       <div>
+        <div class="button-container">
+          <button v-on:click="decreaseCount()">-</button>
+          <h2>{{ count }} serving(s)</h2>
+          <button v-on:click="increaseCount()">+</button>
+        </div>
         <input type="range"  min="0" max="5" v-model="count"/>
-        <h2>{{ count }} serving(s)</h2>
       </div>
     </div>
   </div>
@@ -23,6 +27,18 @@ export default {
     return {
       title: 'Did you eat your fruits and veggies today?',
       count: 0
+    }
+  },
+  methods: {
+    increaseCount: function() {
+      if (this.count < 5) {
+        this.count += 1;
+      }
+    },
+    decreaseCount: function () {
+      if (this.count > 0) {
+        this.count -= 1;
+      }
     }
   }
 }
@@ -45,8 +61,12 @@ body {
   padding: 0 30px;
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 }
+
+.container {
+  max-width: 700px;
+};
 
 input[type="range"] { 
   -webkit-appearance: none !important;
@@ -57,12 +77,13 @@ input[type="range"] {
   border-radius: 10px;
   margin: auto;
   transition: all 0.3s ease;
-  width: 500px;
+  width: 100%;
   outline: 0;
 }
 
 input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none !important  ;
+  -webkit-appearance: none !important;
+  cursor: pointer;
   width: 30px;
   height: 30px;
   background-color: #f1e6b8;
@@ -71,8 +92,38 @@ input[type="range"]::-webkit-slider-thumb {
   transition: all 0.5s ease;
 }
 
-.content {
-  margin-top: 260px;
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0;
+}
+
+button {
+  transition: all 0.5s ease;
+  background-color: #83c190;
+  border-radius: 50%;
+  border: none;
+  outline: 0;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
+  color: #f1e6b8;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  font-size: 30px;
+  position: relative;
+  margin: 0 20px;
+
+  &:hover {
+    background-color: darken(#83c190, 8%);
+  }
+
+  &:active {
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+    top: 1px;
+    left: 1px;
+  }
 }
 
 h1, h2 {

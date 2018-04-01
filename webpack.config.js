@@ -4,8 +4,7 @@ var webpack = require('webpack')
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    path: path.join(__dirname, 'public', 'dist'),
     filename: 'build.js'
   },
   module: {
@@ -96,7 +95,10 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  devServer: {
+      contentBase: path.join(__dirname, 'public')
+  }
 }
 
 if (process.env.NODE_ENV === 'production') {
