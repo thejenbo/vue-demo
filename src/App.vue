@@ -116,6 +116,7 @@ button {
   font-size: 30px;
   position: relative;
   margin: 0 40px;
+  display: inline-block;
 
   &:hover {
     background-color: darken(#83c190, 8%);
