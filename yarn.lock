@@ -1509,10 +1509,6 @@ csso@~2.3.1:
     clap "^1.0.9"
     source-map "^0.5.3"
 
-cssom@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/cssom/-/cssom-0.3.2.tgz#b8036170c79f07a90ff2f16e22284027a243848b"
-
 currently-unhandled@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"
@@ -5316,12 +5312,6 @@ vue-loader@^13.0.5:
     vue-hot-reload-api "^2.2.0"
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.6.0"
-
-vue-simple-svg@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/vue-simple-svg/-/vue-simple-svg-1.2.5.tgz#8daa87d22b118545a6296508c103f5bd79f40f2e"
-  dependencies:
-    cssom "^0.3.2"
 
 vue-style-loader@^3.0.0:
   version "3.1.2"
