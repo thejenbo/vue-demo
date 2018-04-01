@@ -59,7 +59,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  padding: 30px;
+  padding: 0 30px 30px;
   display: flex;
   justify-content: center;
 }
@@ -98,6 +98,7 @@ input[type="range"]::-webkit-slider-thumb {
   justify-content: center;
   width: 100%;
   margin: 30px 0;
+  text-align: center;
 }
 
 button {
@@ -115,7 +116,6 @@ button {
   font-size: 30px;
   position: relative;
   margin: 0 40px;
-  text-align: center;
 
   &:hover {
     background-color: darken(#83c190, 8%);
