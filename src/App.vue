@@ -59,7 +59,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  padding: 0 30px;
+  padding: 30px;
   display: flex;
   justify-content: center;
 }
@@ -76,7 +76,6 @@ input[type="range"] {
   background-color: #83c190;
   border: 1px solid darken(#83c190, 4%);
   border-radius: 10px;
-  margin: auto;
   transition: all 0.3s ease;
   width: 100%;
   outline: 0;
@@ -98,7 +97,7 @@ input[type="range"]::-webkit-slider-thumb {
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 60px 0;
+  margin: 30px 0;
 }
 
 button {
@@ -106,7 +105,7 @@ button {
   transition: all 0.5s ease;
   background-color: #83c190;
   border-radius: 60px;
-  border: none;
+  border: 0;
   outline: 0;
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
   color: #f1e6b8;
@@ -116,6 +115,7 @@ button {
   font-size: 30px;
   position: relative;
   margin: 0 40px;
+  text-align: center;
 
   &:hover {
     background-color: darken(#83c190, 8%);
