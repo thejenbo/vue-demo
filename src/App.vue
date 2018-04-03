@@ -5,9 +5,9 @@
       <h1>{{ title }}</h1>
       <div>
         <div class="button-container">
-          <button v-on:click="decreaseCount()">-</button>
+          <a href="#" class="button" v-on:click="decreaseCount()">-</a>
           <h2>{{ count }} serving(s)</h2>
-          <button v-on:click="increaseCount()">+</button>
+          <a href="#" class="button" v-on:click="increaseCount()">+</a>
         </div>
         <input type="range"  min="0" max="5" v-model="count"/>
       </div>
@@ -31,12 +31,14 @@ export default {
     }
   },
   methods: {
-    increaseCount: function() {
+    increaseCount: function(e) {
+      e.preventDefault();
       if (this.count < 5) {
         this.count++;
       }
     },
-    decreaseCount: function () {
+    decreaseCount: function (e) {
+      e.preventDefault();
       if (this.count > 0) {
         this.count--;
       }
@@ -101,7 +103,7 @@ input[type="range"]::-webkit-slider-thumb {
   text-align: center;
 }
 
-button {
+.button {
   -webkit-appearance: none;
   transition: all 0.5s ease;
   background-color: #83c190;
@@ -117,6 +119,8 @@ button {
   position: relative;
   margin: 0 40px;
   display: inline-block;
+  text-decoration: none;
+  line-height: 60px;
 
   &:hover {
     background-color: darken(#83c190, 8%);
