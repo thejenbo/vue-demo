@@ -5,9 +5,9 @@
       <h1>{{ title }}</h1>
       <div>
         <div class="button-container">
-          <a href="#" class="button" v-on:click="decreaseCount()">-</a>
+          <a href="#" class="button" v-on:click.prevent="decreaseCount()">-</a>
           <h2>{{ count }} serving(s)</h2>
-          <a href="#" class="button" v-on:click="increaseCount()">+</a>
+          <a href="#" class="button" v-on:click.prevent="increaseCount()">+</a>
         </div>
         <input type="range"  min="0" max="5" v-model="count"/>
       </div>
@@ -31,14 +31,12 @@ export default {
     }
   },
   methods: {
-    increaseCount: function(e) {
-      e.preventDefault();
+    increaseCount: function() {
       if (this.count < 5) {
         this.count++;
       }
     },
-    decreaseCount: function (e) {
-      e.preventDefault();
+    decreaseCount: function () {
       if (this.count > 0) {
         this.count--;
       }
